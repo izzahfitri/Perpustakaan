@@ -3,14 +3,12 @@
     <head><title>Contact Us</title></head>
     </head> 
 <body> 
-<p>Ingin tahu lebih banyak atau punya pertanyaan? Silahkan hubungi melalui form berikut:</p>
 
-
-<form action="contact.php" method="GET">
+<form action="contactus.html" method="get">
     <!-- letakkan field di sini -->
 <fieldset>
 <legend><h1><b>Contact Us</b></h1></legend>
-
+<table>
     <tr>
     <label> Nama: </label>
     <input type="text" name="nama-lengkap" /><br/></td>
@@ -22,23 +20,29 @@
     <input type="email" name="email" /><br />
     </tr>
 <p>
-
-
+  
     <tr>
-<form action="prosess-form.php" method="GET">
+<form action="contactus.html" method="get">
     <!-- letakkan field di sini -->
     <label> Isi Komentar: </label>
     <textarea name="komentar" rows="4" cols="50" ></textarea>    <br /><br />
     </tr>
 
-<td><input type="submit" name="submit" value="Submit" value="Send"/></td>
+<td><button onclick="alert('Ok Terima Kasih!')">Submit</button>
         <td></td>
         <td></td>
+</table>
+</fieldset>
+</form>
 
-    
-    <p>Halaman Lainnya</p>
-    
-<ul>
-    <li><a href="index.html">Homepage</a></li>
-    <li><a href="biodata.html">About Me</a></li>
-</ul>
+<footer>
+  <p>&copy; 2025 All rights reserved</p>
+</footer>
+<style>
+footer {
+   background-color: 7F8C8D;
+   color: white;
+   padding: 20px 10px;
+   text-align: center;
+}
+</syle>
