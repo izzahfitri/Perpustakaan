@@ -1,79 +1,224 @@
 <html>
-<header>
-   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website" width="50px" height="500px" />
-   <h1>Perpustakaan Izzah</h1>
-<nav>
-<ul>
-         <li><a href="index.html">Homepage</a></li>
-         <li><a href="about.html">About</a></li>
-	 <li><a href="contact.html">Contact Us</a></li>
+  <header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website" width="50px" height="500px" />
+    <div class="text">Selamat Datang di Website Perpustakaan Izzah!</div>
+    <h4>Koleksi menarik, ada di sini!</h4>
+    <nav>
+      <ul>
+        <li><a href="index.html" target="_blank">Homepage</a></li>
+        <li><a href="about.html" target="_blank">About</a></li>
+        <li><a href="contact.html" target="_blank">Contact Us</a></li>
       </ul>
-  </div>
-</ul>
-</nav>
-</header>
-<title>Homepage saya</title>
-<head>
-<body>
-<h1>Perpustakaan Izzah</h1>
-<h2>Koleksi menarik, ada di sini!</h2>
-<h2><b><i>Homepage</i></b></h2>
-<b>Perpustakaan ini merupakan perpustakaan pribadi dengan berbagai koleksi menarik.</b>
-Web ini masih sederhana dikarenakan, saya baru belajar tentang cara membuat <b><i>Homepage</i></b>
-<p></p>
-</body>
-</html> <!--akhir dokumen HTML-->
-<h3>Kerja sama Perpustakaan lain</h3>
-    <a href="https://library.usu.ac.id">Perpustakaan Universitas Sumatera Utara (USU)</a>
-<ul>
-    <li><a href="about.html">About Me</a></li>
-    <li><a href="contact.html">Contact Us</a></li>
-</ul>
+    </nav>
+    <title>Homepage saya</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+      }
+      header {
+        background-color: #7f8c8d;
+        color: white;
+        padding: 10px 10px;
+        text-align: center;
+      }
 
-<style>
-header {
-   background-color: 7F8C8D;
-   color: white;
-   padding: 20px 10px;
-   text-align: center;
-}
+      header img {
+        height: 50px;
+      }
 
-header img {
-   height: 50px;
-}
+      header nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
 
-header nav ul li {
-   display: inline;
-   margin: 0 10px;
-}
+      header nav ul li {
+        display: inline-block;
+        margin: 0 10px;
+      }
 
-header nav ul li a {
-   color: white;
-   text-decoration: none;
-}
-</syle>
+      header nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        padding: 5px 10px;
+        transition: color 0.3s ease, background-color 0.3s ease;
+      }
 
-</body>
+      header nav ul li a:hover {
+        color: #7f8c8d;
+        background-color: white;
+        border-radius: 5px;
+      }
+
+      .card-container {
+        display: flex;
+        gap: 15px; /* Jarak antar card */
+        flex-wrap: wrap; /* Agar responsive */
+        justify-content: center; /* Agar card tetap di tengah */
+        max-width: 5000px; /* Membatasi lebar container */
+        margin: 20px auto; /* Pusatkan di tengah layar */
+        padding: 10px;
+      }
+
+      .card {
+        width: 250px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        background: white;
+        text-align: center;
+        padding: 15px;
+        transition: transform 0.3s;
+      }
+
+      .card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+      }
+
+      .card h3 {
+        margin: 10px 0;
+      }
+
+      .card p {
+        font-size: 14px;
+        color: #555;
+      }
+
+      .card a {
+        display: inline-block;
+        background: #3498db;
+        color: white;
+        padding: 8px 12px;
+        border-radius: 5px;
+        text-decoration: none;
+        margin-top: 10px;
+        font-weight: bold;
+      }
+
+      .card a:hover {
+        background: #2980b9;
+      }
+
+      .card:hover {
+        transform: scale(1.05);
+      }
+
+      .text {
+        font-size: 24px;
+        font-weight: bold;
+        opacity: 0;
+        transform: translateX(-100%);
+        animation: slideIn 2s ease-in forwards;
+      }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateX(-100%);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      footer {
+        background-color: #7f8c8d;
+        color: white;
+        padding: 3px 1px;
+        text-align: center;
+        margin-top: auto;
+      }
+    </style>
+  </header>
+
+  <body>
+    <div class="container">
+      <center>
+        <h2>
+          <b><i>Homepage</i></b>
+        </h2>
+        <b>Perpustakaan ini merupakan perpustakaan pribadi dengan berbagai koleksi buku menarik.</b>
+        Web ini masih sederhana dikarenakan, saya baru belajar tentang cara membuat <b><i>Homepage</i></b>
+        <h3>Kerja sama Perpustakaan lain</h3>
+        <a href="https://library.usu.ac.id" type="btn btn-primary">Perpustakaan Universitas Sumatera Utara (USU)</a>
+      </center>
+      <div class="card-container">
+        <div class="card">
+          <img src="1.jpg" alt="Gambar" />
+          <h3>Fantasteen Ghost Dormitory In Alaska -Nabilla Anasty</h3>
+          <p>Ebook sederhana ini merupakan rangkuman dari tutorial-tutorial HTML dasar dan CSS dasar di www.malasngoding.com.</p>
+          <a href="https://drive.google.com/file/d/1d5hT5f-pfXZDQkQrcLrhpVQxit-HaAmA/view?usp=sharing">Detail</a>
+        </div>
+        <div class="card">
+          <img src="2.jpg" alt="Gambar" />
+          <h3>GEZZ DAN ANN #01</h3>
+          <p>Ebook sederhana ini merupakan rangkuman dari tutorial-tutorial HTML dasar dan CSS dasar di www.malasngoding.com.</p>
+          <a href="https://drive.google.com/file/d/1qIIS-Gaj7zXrNWn7KbAvU3oN205gEJkD/view?usp=sharing">Detail</a>
+        </div>
+        <div class="card">
+          <img src="3.jpg" alt="Gambar" />
+          <h3>GEZZ DAN ANN #02</h3>
+          <p>Ebook sederhana ini merupakan rangkuman dari tutorial-tutorial HTML dasar dan CSS dasar di www.malasngoding.com.</p>
+          <a href="https://drive.google.com/file/d/1F6c7u4DA3UzQRzPWyjt9Olz6_L6gZSHi/view?usp=sharing" type="button">Detail</a>
+        </div>
+        <div class="card">
+          <img src="4.jpg" alt="Gambar" />
+          <h3>Ayah-Andrea Hirata</h3>
+          <p>Ebook sederhana ini merupakan rangkuman dari tutorial-tutorial HTML dasar dan CSS dasar di www.malasngoding.com.</p>
+          <a href="https://drive.google.com/file/d/1OQO3nDFnwIKvE98xXsU6Y0aJmwWUeywY/view?usp=sharing">Detail</a>
+        </div>
+        <div class="card">
+          <img src="5.jpg" alt="Gambar" />
+          <h3>Kata - rintik sendu</h3>
+          <p>Ebook sederhana ini merupakan rangkuman dari tutorial-tutorial HTML dasar dan CSS dasar di www.malasngoding.com.</p>
+          <a href="https://drive.google.com/file/d/1mAacZKAZKSZW8wQjj--sU7KuYdQCG6kE/view?usp=sharing ">Detail</a>
+        </div>
+        <div class="card">
+          <img src="6.jpg" alt="Gambar" />
+          <h3>Pada Senja yang Membawamu Pergi-Boy Candra</h3>
+          <p>Ebook sederhana ini merupakan rangkuman dari tutorial-tutorial HTML dasar dan CSS dasar di www.malasngoding.com.</p>
+          <a href="https://drive.google.com/file/d/1gHh4iSFUo9cvpmBu-7mH6eQ7hKpvirC1/view?usp=sharing ">Detail</a>
+        </div>
+        <div class="card">
+          <img src="7.jpg" alt="Gambar" />
+          <h3>Pergi-Tere Liye</h3>
+          <p>Ebook sederhana ini merupakan rangkuman dari tutorial-tutorial HTML dasar dan CSS dasar di www.malasngoding.com.</p>
+          <a href="https://drive.google.com/file/d/15b6oGlgLsSiFVt62DYazSsOz3j2YPg7-/view?usp=sharing ">Detail</a>
+        </div>
+        <div class="card">
+          <img src="8.jpg" alt="Gambar" />
+          <h3>Rasuk-Risa Saraswati</h3>
+          <p>Ebook sederhana ini merupakan rangkuman dari tutorial-tutorial HTML dasar dan CSS dasar di www.malasngoding.com.</p>
+          <a href="https://drive.google.com/file/d/1Y2d-SHMtGAfhJSHx1EHiq-m-7N7737Ef/view?usp=sharing ">Detail</a>
+        </div>
+        <div class="card">
+          <img src="9.jpg" alt="Gambar" />
+          <h3>Winter In Tokyo-Hana Tan</h3>
+          <p>Ebook sederhana ini merupakan rangkuman dari tutorial-tutorial HTML dasar dan CSS dasar di www.malasngoding.com.</p>
+          <a href="https://drive.google.com/file/d/1J7Lm_VtqqfK6o6gmRDi3nUL25jwNALJ1/view?usp=sharing ">Detail</a>
+        </div>
+        <div class="card">
+          <img src="10.jpg" alt="Gambar" />
+          <h3>Invalidite by Faradita</h3>
+          <p>Ebook sederhana ini merupakan rangkuman dari tutorial-tutorial HTML dasar dan CSS dasar di www.malasngoding.com.</p>
+          <a href="https://drive.google.com/file/d/18JmuAZoRW0Kk-TiKW4fiFwzrL0b78-Rs/view?usp=sharing ">Detail</a>
+        </div>
+      </div>
+    </div>
+  </body>
+  <footer>
+    <p>&copy; 2025 Edited by Neko</p>
+  </footer>
 </html>
-<footer>
-  <p>&copy; 2025 All rights reserved</p>
-</footer>
-<style>
-footer {
-   background-color: 7F8C8D;
-   color: white;
-   padding: 20px 10px;
-   text-align: center;
-}
-</style>
-<footer>
-  <p>&copy; 2025 All rights reserved</p>
-</footer>
-<style>
-footer {
-   background-color: 7F8C8D;
-   color: white;
-   padding: 20px 10px;
-   text-align: center;
-}
-</style>
+<!--akhir dokumen HTML-->
