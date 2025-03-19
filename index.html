@@ -58,67 +58,56 @@
         border-radius: 5px;
       }
 
-      .card-container {
-        display: flex;
-        gap: 15px; /* Jarak antar card */
-        flex-wrap: wrap; /* Agar responsive */
-        justify-content: center; /* Agar card tetap di tengah */
-        max-width: 5000px; /* Membatasi lebar container */
-        margin: 20px auto; /* Pusatkan di tengah layar */
-        padding: 10px;
+     .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
       }
 
       .card {
-        width: 250px;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        background: white;
-        text-align: center;
-        padding: 15px;
-        transition: transform 0.3s;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
       }
 
       .card img {
         width: 100%;
-        height: 150px;
-        object-fit: cover;
+        height: auto;
+        border-radius: 8px;
       }
-
+      
       .card h3 {
-        margin: 10px 0;
+        margin-top: 15px;
+        font-size: 1.3em;
+        font-weight: bold;
       }
 
       .card p {
-        font-size: 14px;
+        font-size: 1em;
+        margin: 10px 0;
         color: #555;
       }
-
+      
       .card a {
-        display: inline-block;
-        background: #3498db;
-        color: white;
-        padding: 8px 12px;
-        border-radius: 5px;
         text-decoration: none;
-        margin-top: 10px;
+        color: #007BFF;
         font-weight: bold;
+        display: inline-block;
+        margin-top: 10px;
       }
 
       .card a:hover {
-        background: #2980b9;
-      }
-
-      .card:hover {
-        transform: scale(1.05);
-      }
-
-      .text {
-        font-size: 24px;
-        font-weight: bold;
-        opacity: 0;
-        transform: translateX(-100%);
-        animation: slideIn 2s ease-in forwards;
+        text-decoration: underline;
+        color: #0056b3;
       }
 
       @keyframes slideIn {
