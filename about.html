@@ -1,138 +1,73 @@
 <html>
-<header>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website" width="50px" height="500px" />
-    <nav>
-        <ul>
-            <li><a href="index.html" target="_blank">Homepage</a></li>
-            <li><a href="about.html" target="_blank">About me</a></li>
-            <li><a href="contact.html" target="_blank">Contact Us</a></li>
-        </ul>
-    </nav>
+  <head>
+    <meta charset="UTF-8">
     <title>About Me</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-html, body {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-}
-header {
-    background-color: #7F8C8D;
-    color: white;
-    padding: 10px 10px;
-    text-align: center;
-}
-
-header img {
-    height: 50px;
-}
-
-header nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-header nav ul li {
-    display: inline-block;
-    margin: 0 10px;
-}
-
-header nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    padding: 5px 10px;
-    transition: color 0.3s ease, background-color 0.3s ease;
-}
-
-header nav ul li a:hover {
-    color: #7F8C8D;
-    background-color: white;
-    border-radius: 5px;
-}
-
-.container {
-    max-width: 600px;
-    margin: 20px auto;
-    font-family: Arial, sans-serif;
-}
-
-.info-table {
-    width: 100%;
-    border-collapse: collapse;
-    border: 1px solid #ddd;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-.info-table th, 
-.info-table td {
-    padding: 12px;
-    border: 1px solid #ddd;
-    text-align: left;
-}
-
-.info-table th {
-    background-color: #7F8C8D;
-    color: white;
-    font-weight: bold;
-    width: 30%;
-}
-
-.info-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-
-footer {
-    background-color: #7F8C8D;
-    color: white;
-    padding: 3px 1px;
-    text-align: center;
-    margin-top: auto;
-}
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+      footer {
+        background-color: #7F8C8D;
+        color: white;
+        padding: 3px 1px;
+        text-align: center;
+        margin-top: auto;
+      }
     </style>
-</header>
-	
-<body>
-    <h1><center>About Me</center></h1>
-<div class="container">
-    <table class="info-table">
-        <tr>
-            <th>Nama</th>
-            <td>Izzah Fitri Al-Musawwir</td>
-        </tr>
-        <tr>
-            <th>NIM</th>
-            <td>220709062</td>
-        </tr>
-        <tr>
-            <th>Jurusan</th>
-            <td>Perpustakaan dan Sains Informasi</td>
-        </tr>
-        <tr>
-            <th>Fakultas</th>
-            <td>Ilmu Budaya</td>
-        </tr>
-        <tr>
-            <th>Perguruan Tinggi</th>
-            <td>Universitas Sumatera Utara</td>
-        </tr>
-        <tr>
-            <th>E-mail</th>
-            <td>izzahalmusawwir@gmail.ac.id</td>
-        </tr>
-    </table>
-</div>
-</body>
+  </head>
 
-<footer>
-    <p>&copy; 2025 Perpustakaan Izzah Fitri Al-Musawwir</p>
-</footer>
+  <body>
+    <header class="bg-dark text-white text-center py-3">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website" width="50px" height="50px" />
+      <nav>
+        <ul class="nav justify-content-center">
+          <li class="nav-item"><a class="nav-link text-white" href="index.html" target="_blank">Homepage</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="about.html" target="_blank">About me</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="contact.html" target="_blank">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
 
+    <div class="container my-5">
+      <h1 class="text-center mb-4">About Me</h1>
+
+      <table class="table table-bordered table-striped">
+        <tr>
+          <th>Nama</th>
+          <td>Izzah Fitri Al-Musawwir</td>
+        </tr>
+        <tr>
+          <th>NIM</th>
+          <td>220709062</td>
+        </tr>
+        <tr>
+          <th>Jurusan</th>
+          <td>Perpustakaan dan Sains Informasi</td>
+        </tr>
+        <tr>
+          <th>Fakultas</th>
+          <td>Ilmu Budaya</td>
+        </tr>
+        <tr>
+          <th>Perguruan Tinggi</th>
+          <td>Universitas Sumatera Utara</td>
+        </tr>
+        <tr>
+          <th>E-mail</th>
+          <td>izzahalmusawwir@gmail.ac.id</td>
+        </tr>
+      </table>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Perpustakaan Izzah Fitri Al-Musawwir</p>
+    </footer>
+
+    <!-- Bootstrap JS dan Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+  </body>
 </html>
-
-
