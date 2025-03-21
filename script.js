@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const formAction = form.getAttribute("action");
     const url = `${formAction}?nama-lengkap=${encodeURIComponent(nama)}&email=${encodeURIComponent(email)}&telpon=${encodeURIComponent(telpon)}&komentar=${encodeURIComponent(komentar)}`;
-    window.location.href = url;
+window.location.href = url;
   });
 
   function validateEmail(email) {
@@ -68,7 +68,8 @@ document.addEventListener("DOMContentLoaded", function () {
     field.parentNode.appendChild(error);
   }
 
-  function clearErrors() {
+
+    function clearErrors() {
     document.querySelectorAll(".error-message").forEach((error) => error.remove());
   }
 });
