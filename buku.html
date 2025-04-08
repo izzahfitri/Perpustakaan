@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Daftar Buku</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+      }
+
+      header {
+        background-color: #7F8C8D;
+        color: white;
+        padding: 10px;
+        text-align: center;
+      }
+
+      header img {
+        height: 50px;
+      }
+
+      header nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      header nav ul li {
+        display: inline-block;
+        margin: 0 10px;
+      }
+
+      header nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        padding: 5px 10px;
+        transition: color 0.3s ease, background-color 0.3s ease;
+      }
+
+      header nav ul li a:hover {
+        color: #7F8C8D;
+        background-color: white;
+        border-radius: 5px;
+      }
+
+      .recommendation-section {
+        background-color: #f5f5f5;
+        padding: 30px;
+        margin: 40px auto;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        max-width: 1200px;
+        border: 2px solid #dcdcdc;
+      }
+
+      .recommendation-section h2 {
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 30px;
+        color: #2c3e50;
+      }
+
+      .card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .card {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        border-radius: 15px;
+        padding: 15px;
+        background-color: white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease-in-out;
+        align-items: flex-start;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .card img {
+        width: 200px;
+        height: auto;
+        border-radius: 10px;
+        object-fit: cover;
+       }
+
+      .card-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .card-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .card-content h4 {
+        color: #34495e;
+        margin-top: 0;
+        font-size: 1.2em;
+        font-weight: bold;
+      }
+
+      .card-content p {
+        font-size: 1em;
+        color: #555;
+        flex: 1;
+      }
+
+      .card-content a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        display: inline-block;
+        background-color: #007BFF;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 1em;
+        text-align: center;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .card-content a:hover {
+        text-decoration: underline;
+        background-color: #0056b3;
+        transform: scale(1.05);
+      }
+
+      footer {
+        background-color: #7F8C8D;
+        color: white;
+        padding: 3px 1px;
+        text-align: center;
+        margin-top: auto;
+      }
+ 
+      .nav-link {
+        color: white !important;
+        transition: color 0.3s ease, background-color 0.3s ease;
+      }
+
+      .nav-link:hover {
+        color: #7F8C8D !important;
+        background-color: white !important;
+        border-radius: 5px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <header class="your-class">
+      <div class="container-fluid d-flex align-items-center py-2">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website" class="me-3" />
+        <a class="navbar-brand text-white fw-bold fs-4" href="#">Perpustakaan Izzah</a>
+      </div>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html" target="_blank">Homepage</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html" target="_blank">About me</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html" target="_blank">Contact Us</a></li>
+                <li class="nav-item"><a class="nav-link active" href="buku.html" target="_blank">Daftar Buku</a></li>
+              </ul>              
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="recommendation-section">
+      <h2>DAFTAR BUKU</h2>
+      <div class="card-container" id="book-container"></div>
+    </div>
+
+    <footer class="text-center py-3">
+      <p>&copy; 2025 Perpustakaan Izzah Fitri Al-Musawwir</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script>
+      const books = [
+        { img: '1.jpg', title: 'Fantasteen: Ghost Dormitory In Alaska', author: 'Nabilla Anasty', genre: 'Horor', rating: 5, description: 'Mengisahkan seorang gadis yang tinggal di asrama berhantu di Alaska dan berusaha mengungkap misteri di balik kejadian aneh di sana.', link: 'https://drive.google.com/file/d/1d5hT5f-pfXZDQkQrcLrhpVQxit-HaAmA/view?usp=sharing' },
+        { img: '2.jpg', title: 'GEZZ DAN ANN #01', genre: 'Romantis', rating: 5, description: 'Petualangan dua remaja, Gezz dan Ann, yang menghadapi tantangan hidup dan menguji persahabatan mereka.', link: 'https://drive.google.com/file/d/1qIIS-Gaj7zXrNWn7KbAvU3oN205gEJkD/view?usp=sharing' },
+        { img: '3.jpg', title: 'GEZZ DAN ANN #02', genre: 'Romantis', rating: 5, description: 'Melanjutkan petualangan Gezz dan Ann, di mana mereka semakin menghadapi konflik pribadi dan tantangan baru dalam persahabatan mereka.', link: 'https://drive.google.com/file/d/1F6c7u4DA3UzQRzPWyjt9Olz6_L6gZSHi/view?usp=sharing' },
+        { img: '4.jpg', title: 'Ayah - Andrea Hirata', genre: 'Drama', rating: 5, description: 'Mengisahkan tentang perjuangan seorang ayah dalam membesarkan anaknya di tengah keterbatasan ekonomi.', link: 'https://drive.google.com/file/d/1OQO3nDFnwIKvE98xXsU6Y0aJmwWUeywY/view?usp=sharing' },
+        { img: '5.jpg', title: 'Kata - Rintik Sendu', genre: 'Puisi', rating: 5, description: 'Mengisahkan perjalanan emosional seorang tokoh yang berjuang menghadapi rasa kehilangan dan kesedihan.', link: 'https://drive.google.com/file/d/1mAacZKAZKSZW8wQjj--sU7KuYdQCG6kE/view?usp=sharing' },
+        { img: '6.jpg', title: 'Pada Senja yang Membawamu Pergi - Boy Candra', genre: 'Romantis', rating: 5, description: 'Berkisah tentang seorang pria yang harus menghadapi kenyataan pahit saat orang yang sangat ia cintai pergi dari hidupnya.', link: 'https://drive.google.com/file/d/1gHh4iSFUo9cvpmBu-7mH6eQ7hKpvirC1/view?usp=sharing' },
+        { img: '7.jpg', title: 'Pergi - Tere Liye', genre: 'Petualangan', rating: 5, description: 'Melanjutkan kisah Bujang pada usia dewasanya dalam mengarungi kerumitan kehidupan dalam pencariannya berkelana mencari makna hidup.', link: 'https://drive.google.com/file/d/15b6oGlgLsSiFVt62DYazSsOz3j2YPg7-/view?usp=sharing' },
+        { img: '8.jpg', title: 'Rasuk - Risa Saraswati', genre: 'Horor', rating: 5, description: 'Sebuah novel bergenre horor yang menceritakan kisah tentang seseorang yang mengalami pengalaman mistis dan kerasukan roh.', link: 'https://drive.google.com/file/d/1Y2d-SHMtGAfhJSHx1EHiq-m-7N7737Ef/view?usp=sharing' },
+        { img: '9.jpg', title: 'Winter In Tokyo - Hana Tan', genre: 'Romantis', rating: 5, description: 'Mengisahkan tentang perjalanan cinta yang penuh tantangan antara dua orang yang berasal dari latar belakang budaya yang berbeda.', link: 'https://drive.google.com/file/d/1J7Lm_VtqqfK6o6gmRDi3nUL25jwNALJ1/view?usp=sharing' },
+        { img: '10.jpg', title: 'Invalidite - Faradita', genre: 'Drama', rating: 5, description: 'Seorang wanita yang mengalami keterbatasan fisik akibat kecelakaan atau kondisi tertentu, dan bagaimana ia berusaha menemukan makna hidup dan kebahagiaan di tengah keterbatasannya.', link: 'https://drive.google.com/file/d/18JmuAZoRW0Kk-TiKW4fiFwzrL0b78-Rs/view?usp=sharing' }
+      ];
+
+      const container = document.getElementById('book-container');
+      books.forEach(book => {
+        container.innerHTML += `
+        <div class="card">
+            <img src="${book.img}" alt="${book.title}" class="img-fluid" />
+            <div class="card-content">
+                <h3>${book.title}</h3>
+                <p><strong>Genre:</strong> ${book.genre}</p>
+                <div class="d-flex align-items-center flex-wrap mb-2" style="gap: 10px;">
+                    <span class="badge bg-secondary">${book.genre}</span>
+                    <div style="color: #FFD700; font-size: 1.2em;">★★★★★ (${book.rating}.0)</div>
+                </div>
+                <p>${book.description}</p>
+                <a href="${book.link}" target="_blank">Detail</a>
+            </div>
+        </div>
+        `;
+    });
+    </script>
+  </body>
+</html>
