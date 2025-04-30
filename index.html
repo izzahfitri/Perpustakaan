@@ -1,6 +1,218 @@
 <html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Homepage</title>
+    <style>
+        html,
+        body {
+          height: 100%;
+          margin: 0;
+          font-family: Arial, sans-serif;
+          background: #f7f7f7;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+        }
+
+        header {
+          background-color: #7f8c8d;
+          color: white;
+          padding: 20px 10px;
+          text-align: center;
+          width: 100%;
+        }
+  
+        header img {
+          height: 50px;
+        }
+  
+        header nav ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+  
+        header nav ul li {
+          display: inline-block;
+          margin: 0 10px;
+        }
+  
+        header nav ul li a {
+          color: white;
+          text-decoration: none;
+          font-size: 16px;
+          padding: 5px 10px;
+          transition: color 0.3s ease, background-color 0.3s ease;
+        }
+  
+        header nav ul li a:hover {
+          color: #7f8c8d;
+          background-color: white;
+          border-radius: 5px;
+        }
+  
+        main {
+          flex: 1;
+          max-width: 1200px;
+          margin: auto;
+          width: 100%;
+        }
+
+       .card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        }
+  
+        .card {
+          border: 1px solid #ddd;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          padding: 20px;
+          text-align: center;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+        }
+  
+        .card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+  
+        .card img {
+          width: 100%;
+          height: auto;
+          border-radius: 8px;
+        }
+        
+        .card h3 {
+          margin-top: 15px;
+          font-size: 1.3em;
+          font-weight: bold;
+        }
+  
+        .card p {
+          font-size: 1em;
+          margin: 10px 0;
+          color: #555;
+        }
+        
+        .card a {
+          text-decoration: none;
+          color: white;
+          font-weight: bold;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #007BFF;
+          padding: 10px 20px;
+          border-radius: 5px;
+          margin-top: 15px;
+          font-size: 1.1em;
+          transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+  
+        .card a:hover {
+          text-decoration: underline;
+          background-color: #0056b3;
+          transform: scale(1.1);
+        }
+        
+        @keyframes slideIn {
+          from {
+            opacity: 0;
+            transform: translateX(-100%);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+  
+        footer {
+          background-color: #7f8c8d;
+          color: white;
+          padding: 3px 1px;
+          text-align: center;
+          margin-top: auto;
+        }
+  
+        .recommendation-section {
+          background-color: #f5f5f5;
+          padding: 30px;
+          margin: 40px auto;
+          border-radius: 15px;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+          max-width: 1200px;
+          border: 2px solid #dcdcdc;
+        }
+  
+        .recommendation-section h2 {
+          text-align: center;
+          font-size: 30px;
+          margin-bottom: 30px;
+          color: #2c3e50;
+        }
+      
+        .event-container {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 30px;
+          justify-content: center;
+          padding: 20px;
+        }
+    
+        .event-card {
+          background-color: #ffffff;
+          border-radius: 12px;
+          box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+          padding: 20px;
+          width: 320px;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          position: relative;
+        }
+    
+        .event-card:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .event-card h3 {
+          margin-top: 0;
+          font-size: 1.3em;
+          color: #2c3e50;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+    
+        .event-card p {
+          margin: 8px 0;
+          color: #555;
+          font-size: 0.95em;
+        }
+
+        .event-card p strong {
+          color: #333;
+        }
+
+        .event-icon {
+          font-size: 20px;
+          color: #007BFF;
+        }
+    </style>
+</head>
+<body>
   <header>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website" width="50px" height="500px" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Logo_of_North_Sumatra_University.svg/800px-Logo_of_North_Sumatra_University.svg.png" alt="Logo Website" width="50" height="50" />
     <div class="text">Selamat Datang di Website Perpustakaan Izzah!</div>
     <h4>Koleksi menarik, ada di sini!</h4>
     <nav>
@@ -11,170 +223,19 @@
         <li><a href="buku.html" target="_blank">Daftar Buku</a></li>
       </ul>
     </nav>
-    <title>Homepage saya</title>
-    <style>
-      html,
-      body {
-        height: 100%;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-      }
-      header {
-        background-color: #7f8c8d;
-        color: white;
-        padding: 10px 10px;
-        text-align: center;
-      }
-
-      header img {
-        height: 50px;
-      }
-
-      header nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-
-      header nav ul li {
-        display: inline-block;
-        margin: 0 10px;
-      }
-
-      header nav ul li a {
-        color: white;
-        text-decoration: none;
-        font-size: 16px;
-        padding: 5px 10px;
-        transition: color 0.3s ease, background-color 0.3s ease;
-      }
-
-      header nav ul li a:hover {
-        color: #7f8c8d;
-        background-color: white;
-        border-radius: 5px;
-      }
-
-     .card-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 20px;
-      }
-
-      .card {
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        text-align: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-      }
-
-      .card img {
-        width: 100%;
-        height: auto;
-        border-radius: 8px;
-      }
-      
-      .card h3 {
-        margin-top: 15px;
-        font-size: 1.3em;
-        font-weight: bold;
-      }
-
-      .card p {
-        font-size: 1em;
-        margin: 10px 0;
-        color: #555;
-      }
-      
-      .card a {
-        text-decoration: none;
-        color: white;
-        font-weight: bold;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #007BFF;
-        padding: 10px 20px;
-        border-radius: 5px;
-        margin-top: 15px;
-        font-size: 1.1em;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-      }
-
-      .card a:hover {
-        text-decoration: underline;
-        background-color: #0056b3;
-        transform: scale(1.1);
-      }
-      
-      @keyframes slideIn {
-        from {
-          opacity: 0;
-          transform: translateX(-100%);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
-
-      footer {
-        background-color: #7f8c8d;
-        color: white;
-        padding: 3px 1px;
-        text-align: center;
-        margin-top: auto;
-      }
-
-      .recommendation-section {
-        background-color: #f5f5f5;
-        padding: 30px;
-        margin: 40px auto;
-        border-radius: 15px;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-        max-width: 1200px;
-        border: 2px solid #dcdcdc;
-      }
-
-      .recommendation-section h2 {
-        text-align: center;
-        font-size: 30px;
-        margin-bottom: 30px;
-        color: #2c3e50;
-      }
-    </style>
   </header>
 
-  <body>
-    <div class="container">
-      <center>
-        <h2>
-          <b><i>Homepage</i></b>
-        </h2>
-        <b>Perpustakaan ini merupakan perpustakaan pribadi dengan berbagai koleksi buku menarik.</b>
-        Web ini masih sederhana dikarenakan, saya baru belajar tentang cara membuat <b><i>Homepage</i></b>
+<main>
+    <section style="text-align: center;">
+        <h2><b><i>Homepage</i></b></h2>
+        <p><b>Perpustakaan ini merupakan perpustakaan pribadi dengan berbagai koleksi buku menarik.</b></p>
+        <p>Web ini masih sederhana dikarenakan, saya baru belajar tentang cara membuat web.</p>
         <h3>Kerja sama Perpustakaan lain</h3>
         <a href="https://library.usu.ac.id" target="_blank">Perpustakaan Universitas Sumatera Utara (USU)</a>
-      </center>
-      </div>
-    <div class="recommendation-section">
-        <h2>📚 Rekomendasi Buku 📚</h2>   
+    </section>
+
+    <section class="recommendation-section">
+      <h2>📚 Rekomendasi Buku 📚</h2>   
       <div class="card-container">
         <div class="card">
           <img src="1.jpg" alt="Gambar" />
@@ -225,10 +286,55 @@
           <a href="https://drive.google.com/file/d/18JmuAZoRW0Kk-TiKW4fiFwzrL0b78-Rs/view?usp=sharing " target="_blank">Detail</a>
         </div>
       </div>
+    </section>
+
+  <section>
+    <h1>Event Mendatang</h1>
+    <div class="event-container" id="eventList">
+      <!-- Event cards will be injected here -->
     </div>
-  </body>
-  <footer class="center py-3">
+  </section>
+</main>
+
+<footer class="center py-3">
     <p>&copy; 2025 Perpustakaan Izzah Fitri Al-Musawwir</p>
-  </footer>
+</footer>
+
+  <script>
+    const events = [
+      {
+        title: "Webinar Transformasi Digital",
+        date: "10 Mei 2025",
+        location: "Zoom Meeting",
+        description: "Diskusi tentang tren digitalisasi dan dampaknya di Indonesia."
+      },
+      {
+        title: "Workshop UI/UX Design",
+        date: "15 Mei 2025",
+        location: "Gedung Serbaguna, Jakarta",
+        description: "Pelatihan langsung membuat desain antarmuka yang user-friendly."
+      },
+      {
+        title: "Peluncuran Buku Literasi Digital",
+        date: "20 Mei 2025",
+        location: "Perpustakaan Nasional RI",
+        description: "Launching buku dan talkshow bersama penulis."
+      }
+    ];
+
+    const eventList = document.getElementById("eventList");
+
+    events.forEach(event => {
+      const card = document.createElement("div");
+      card.className = "event-card";
+      card.innerHTML = `
+        <h3><span class="event-icon">📅</span>${event.title}</h3>
+        <p><strong>Tanggal:</strong> ${event.date}</p>
+        <p><strong>Tempat:</strong> ${event.location}</p>
+        <p>${event.description}</p>
+      `;
+      eventList.appendChild(card);
+    });
+  </script>
+</body>
 </html>
-<!--akhir dokumen HTML-->
