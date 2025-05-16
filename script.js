@@ -73,3 +73,27 @@ window.location.href = url;
     document.querySelectorAll(".error-message").forEach((error) => error.remove());
   }
 });
+
+function setCookie(nama, nilai, hari) {
+    const d = new Date();
+    d.setTime(d.getTime() + (hari * 24 * 60 * 60 * 1000));
+    let expires = "expires=" + d.toUTCString();
+    document.cookie = nama + "=" + nilai + ";" + expires + ";path=/";
+}
+
+function getCookie(nama) {
+    let namaCookie = nama + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let cookieArray = decodedCookie.split(';');
+    for(let i = 0; i < cookieArray.length; i++) {
+        let c = cookieArray[i].trim();
+        if (c.indexOf(namaCookie) === 0) {
+            return c.substring(namaCookie.length, c.length);
+        }
+    }
+    return "";
+}
+
+function deleteCookie(nama) {
+    document.cookie = nama + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+}
