@@ -1,4 +1,35 @@
-document.addEventListener("DOMContentLoaded", function () {
+function setCookie(name, value, days) {
+  const d = new Date();
+  d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+  const expires = "expires=" + d.toUTCString();
+  document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
+
+function getCookie(name) {
+  const cname = name + "=";
+  const decodedCookie = decodeURIComponent(document.cookie);
+  const ca = decodedCookie.split(';');
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i].trim();
+    if (c.indexOf(cname) === 0) {
+      return c.substring(cname.length, c.length);
+    }
+  }
+  return "";
+}
+window.addEventListener("DOMContentLoaded", function () {
+  // Jalankan cookie hanya jika di halaman index.html
+  if (window.location.pathname.includes("index")) {
+    const user = getCookie("username");
+    if (user !== "") {
+      alert("Selamat datang kembali, " + user + "!");
+    } else {
+      setCookie("username", "izzah", 7);
+      alert("Cookie 'username' telah dibuat!");
+    }
+  }
+
+  
   const form = document.querySelector("form");
   const submitButton = form.querySelector("button");
 
@@ -73,33 +104,3 @@ window.location.href = url;
     document.querySelectorAll(".error-message").forEach((error) => error.remove());
   }
 });
-
-function setCookie(name, value, days) {
-  const d = new Date();
-  d.setTime(d.getTime() + (days*24*60*60*1000));
-  const expires = "expires=" + d.toUTCString();
-  document.cookie = name + "=" + value + ";" + expires + ";path=/";
-}
-
-function getCookie(name) {
-  const cname = name + "=";
-  const decodedCookie = decodeURIComponent(document.cookie);
-  const ca = decodedCookie.split(';');
-  for (let i = 0; i < ca.length; i++) {
-    let c = ca[i].trim();
-    if (c.indexOf(cname) == 0) {
-      return c.substring(cname.length, c.length);
-    }
-  }
-  return "";
-}
-
-window.onload = function() {
-  const user = getCookie("username");
-  if (user != "") {
-    alert("Selamat datang kembali, " + user);
-  } else {
-    setCookie("username", "izzah", 7);
-    alert("Cookie 'username' telah dibuat!");
-  }
-};
