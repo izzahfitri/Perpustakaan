@@ -75,25 +75,31 @@ window.location.href = url;
 });
 
 function setCookie(name, value, days) {
-    const date = new Date();
-    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-    const expires = "expires=" + date.toUTCString();
-    document.cookie = `${encodeURIComponent(name)}=${encodeURIComponent(value)}; ${expires}; path=/`;
+  const d = new Date();
+  d.setTime(d.getTime() + (days*24*60*60*1000));
+  const expires = "expires=" + d.toUTCString();
+  document.cookie = name + "=" + value + ";" + expires + ";path=/";
 }
 
 function getCookie(name) {
-    const decodedCookie = decodeURIComponent(document.cookie);
-    const cookies = decodedCookie.split(';');
-    const target = encodeURIComponent(name) + "=";
-    for (let i = 0; i < cookies.length; i++) {
-        let cookie = cookies[i].trim();
-        if (cookie.indexOf(target) === 0) {
-            return cookie.substring(target.length, cookie.length);
-        }
+  const cname = name + "=";
+  const decodedCookie = decodeURIComponent(document.cookie);
+  const ca = decodedCookie.split(';');
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i].trim();
+    if (c.indexOf(cname) == 0) {
+      return c.substring(cname.length, c.length);
     }
-    return "";
+  }
+  return "";
 }
 
-function deleteCookie(name) {
-    document.cookie = `${encodeURIComponent(name)}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
-}
+window.onload = function() {
+  const user = getCookie("username");
+  if (user != "") {
+    alert("Selamat datang kembali, " + user);
+  } else {
+    setCookie("username", "izzah", 7);
+    alert("Cookie 'username' telah dibuat!");
+  }
+};
