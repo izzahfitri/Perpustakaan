@@ -1,5 +1,11 @@
 <html>
 <head>
+    <script src="cookie.js"></script>
+<div style="text-align:center; margin-bottom: 30px;">
+  <button onclick="setCookie('username', 'izzah', 7)">Simpan Cookie (username)</button>
+  <button onclick="alert('Cookie username: ' + getCookie('username'))">Tampilkan Cookie</button>
+  <button onclick="deleteCookie('username'); alert('Cookie dihapus')">Hapus Cookie</button>
+</div>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Homepage</title>
@@ -301,16 +307,6 @@
     <p>&copy; 2025 Perpustakaan Izzah Fitri Al-Musawwir</p>
 </footer>
 
- <script>
-    <script src="cookie.js"></script>
-<div style="text-align:center; margin-bottom: 30px;">
-  <div style="text-align:center; margin-bottom: 30px;">
-  <button onclick="setCookie('username', 'izzah', 7)">Simpan Cookie (username)</button>
-  <button onclick="alert('Cookie username: ' + getCookie('username'))">Tampilkan Cookie</button>
-  <button onclick="deleteCookie('username'); alert('Cookie dihapus')">Hapus Cookie</button>
-  </div>
-</div>
-  </script>
   <script>
     const events = [
       {
