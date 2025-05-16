@@ -301,6 +301,12 @@
     <p>&copy; 2025 Perpustakaan Izzah Fitri Al-Musawwir</p>
 </footer>
 
+    <script src="cookie.js"></script>
+<div style="text-align:center; margin-bottom: 30px;">
+  <button onclick="setCookie('username', 'izzah', 7)">Simpan Cookie</button>
+  <button onclick="alert(getCookie('username'))">Tampilkan Cookie</button>
+  <button onclick="deleteCookie('username')">Hapus Cookie</button>
+</div>
   <script>
     const events = [
       {
@@ -336,12 +342,6 @@
       `;
       eventList.appendChild(card);
     });
-
-  <script src="cookie.js"></script>
-    <button onclick="setCookie('username', 'izzah', 7)">Simpan Cookie</button>
-    <button onclick="alert(getCookie('username'))">Tampilkan Cookie</button>
-    <button onclick="deleteCookie('username')">Hapus Cookie</button>
-    
   </script>
 </body>
 </html>
