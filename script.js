@@ -17,9 +17,10 @@ function getCookie(name) {
   }
   return "";
 }
+
 window.addEventListener("DOMContentLoaded", function () {
-  // Jalankan cookie hanya jika di halaman index.html
-  if (window.location.pathname.includes("index")) {
+  // Perbaiki pengecekan halaman
+  if (window.location.pathname.includes("index") || window.location.pathname === "/" || window.location.pathname === "/index.html") {
     const user = getCookie("username");
     if (user !== "") {
       alert("Selamat datang kembali, " + user + "!");
@@ -28,6 +29,7 @@ window.addEventListener("DOMContentLoaded", function () {
       alert("Cookie 'username' telah dibuat!");
     }
   }
+
 
   
   const form = document.querySelector("form");
