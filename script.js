@@ -74,26 +74,26 @@ window.location.href = url;
   }
 });
 
-function setCookie(nama, nilai, hari) {
-    const d = new Date();
-    d.setTime(d.getTime() + (hari * 24 * 60 * 60 * 1000));
-    let expires = "expires=" + d.toUTCString();
-    document.cookie = nama + "=" + nilai + ";" + expires + ";path=/";
+function setCookie(name, value, days) {
+    const date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + date.toUTCString();
+    document.cookie = `${encodeURIComponent(name)}=${encodeURIComponent(value)}; ${expires}; path=/`;
 }
 
-function getCookie(nama) {
-    let namaCookie = nama + "=";
-    let decodedCookie = decodeURIComponent(document.cookie);
-    let cookieArray = decodedCookie.split(';');
-    for(let i = 0; i < cookieArray.length; i++) {
-        let c = cookieArray[i].trim();
-        if (c.indexOf(namaCookie) === 0) {
-            return c.substring(namaCookie.length, c.length);
+function getCookie(name) {
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const cookies = decodedCookie.split(';');
+    const target = encodeURIComponent(name) + "=";
+    for (let i = 0; i < cookies.length; i++) {
+        let cookie = cookies[i].trim();
+        if (cookie.indexOf(target) === 0) {
+            return cookie.substring(target.length, cookie.length);
         }
     }
     return "";
 }
 
-function deleteCookie(nama) {
-    document.cookie = nama + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+function deleteCookie(name) {
+    document.cookie = `${encodeURIComponent(name)}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
 }
